@@ -1,0 +1,45 @@
+openapi: 3.1.0
+info:
+  title: Google Drive Folder Access
+  description: Lists files in a public Google Drive folder using the Drive API v3.
+  version: 1.0.0
+servers:
+  - url: https://www.googleapis.com/drive/v3
+    description: Google Drive API server
+paths:
+  /files:
+    get:
+      operationId: listFolderFiles
+      summary: List files in a Google Drive folder
+      parameters:
+        - name: q
+          in: query
+          required: true
+          description: Query to filter files by folder ID. Use: `'FOLDER_ID' in parents`
+          schema:
+            type: string
+        - name: key
+          in: query
+          required: true
+          description:AIzaSyARpRWHFxt6SknrDFWY027jMK9XmoiG54E
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A list of files in the folder
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  files:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                        name:
+                          type: string
+                        mimeType:
+                          type: string
