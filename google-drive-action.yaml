@@ -15,7 +15,7 @@ paths:
         - name: q
           in: query
           required: true
-          description: Query to filter files by folder ID. Use: `'FOLDER_ID' in parents`
+          description: Query to filter files by folder ID. Use: `'https://drive.google.com/drive/folders/11DbEM3isGy3xZlx5b3tWXfRvOdea4smZ?usp=sharing' in parents`
           schema:
             type: string
         - name: key
@@ -43,3 +43,4 @@ paths:
                           type: string
                         mimeType:
                           type: string
+
